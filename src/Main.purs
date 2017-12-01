@@ -1,11 +1,30 @@
 module Main where
 
 import Prelude
+import Global (readInt)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, logShow)
+import Data.Array (snoc, uncons, zipWith)
+import Data.Foldable (sum)
+import Data.Int (floor)
+import Data.Maybe (Maybe(..))
+import Data.String (singleton, toCharArray)
+
+shift :: forall a. Array a -> Array a
+shift xs = case uncons xs of
+  Nothing -> []
+  Just {head, tail} -> snoc tail head
+
+digits :: String -> Array Int
+digits = map (floor <<< readInt 10 <<< singleton) <<< toCharArray
+
+pair :: Array Int -> Array Int
+pair xs = zipWith f xs (shift xs)
+  where
+    f x y = if x == y then x else 0
 
 captcha :: String -> Int
-captcha s = 0
+captcha = sum <<< pair <<< digits
 
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
