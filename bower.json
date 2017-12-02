@@ -13,10 +13,13 @@
     "purescript-strings": "^3.3.2",
     "purescript-arrays": "^4.2.1",
     "purescript-integers": "^3.2.0",
-    "purescript-foldable-traversable": "^3.6.1"
+    "purescript-foldable-traversable": "^3.6.1",
+    "purescript-partial": "^1.2.1",
+    "purescript-node-fs-aff": "^5.0.0"
   },
   "devDependencies": {
     "purescript-psci-support": "^3.0.0",
-    "purescript-spec": "^2.0.0"
+    "purescript-spec": "^2.0.0",
+    "purescript-debug": "^3.0.0"
   }
 }
