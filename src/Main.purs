@@ -7,10 +7,10 @@ import Control.Monad.Eff (Eff)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff (FS, readTextFile)
 
-import Day02 (checksum)
+import Day02 (checksum2)
 
 main :: forall e. Eff (console :: CONSOLE, fs :: FS | e) Unit
 main = launchAff_ do
   spreadsheet <- readTextFile ASCII "src/Day02.txt"
-  logShow $ checksum spreadsheet
+  logShow $ checksum2 spreadsheet
   pure unit
