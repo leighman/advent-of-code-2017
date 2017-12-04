@@ -7,10 +7,10 @@ import Control.Monad.Eff (Eff)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff (FS, readTextFile)
 
-import Day04 (valid)
+import Day04 (valid2)
 
 main :: forall e. Eff (console :: CONSOLE, fs :: FS | e) Unit
 main = launchAff_ do
   passwords <- readTextFile ASCII "src/Day04.txt"
-  logShow $ valid passwords
+  logShow $ valid2 passwords
   pure unit
