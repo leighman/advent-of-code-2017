@@ -9,6 +9,7 @@ import Test.Day01 (testDay01)
 import Test.Day02 (testDay02)
 import Test.Day03 (testDay03)
 import Test.Day04 (testDay04)
+import Test.Day05 (testDay05)
 
 main :: Eff (RunnerEffects ()) Unit
 main = run [consoleReporter] do
@@ -16,3 +17,4 @@ main = run [consoleReporter] do
   testDay02
   testDay03
   testDay04
+  testDay05
